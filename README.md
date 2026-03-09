@@ -1,3 +1,13 @@
+# Project Details
+## Purpose: 
+Website for Pet Care Shop
+
+## Tech Stack:
+  Astro + Tailwind CSS
+
+
+
+
 # Astro Starter Kit: Minimal
 
 ```sh
