@@ -1,0 +1,27 @@
+---
+---
+<style>
+    @reference "../styles/global.css";
+    .showcase {
+        background-color: rgba(232, 249, 169, 0.90);
+        margin: 20px;
+        @apply outline outline-gray-400 rounded-tl-2xl rounded-br-2xl flex flex-col justify-center gap-5 py-5 px-5 
+    }
+    .showcase .showcase_headline {
+        @apply text-5xl
+    }
+    .showcase .showcase_body {
+        @apply flex items-center justify-center min-h-60 gap-5 
+    }
+    .showcase .showcase_item {
+        @apply flex items-center justify-center h-50 w-50 bg-amber-100 py-5 px-5 text-3xl rounded-2xl shadow-lg outline outline-blue-400
+    }
+</style>
+<section class="showcase">
+    <div class="showcase_headline">Best Sellings</div>
+    <div class="showcase_body">
+    <div class="showcase_item">Hello</div>
+    <div class="showcase_item">Howdy</div>
+    <div class="showcase_item">Hoorah</div>
+    </div>
+</section>

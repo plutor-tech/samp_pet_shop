@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import hero from '/public/hero.png';
+---
+<style>
+  .hero {
+    background-color: rgba(255,255,255,0.5);
+    width: auto;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+<div class="hero">
+    <Image src={hero} alt="The Pet Shop Hero" class="relative max-h-120 bg-cover"/>
+</div>

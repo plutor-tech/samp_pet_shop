@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import logo from "/public/logo.png";
+---
+<div class="flex-col content-center">
+    <a href="/">
+        <Image
+          src={logo}
+          alt="The Pet Shop Logo"
+          class="rounded-full w-16 h-16 object-cover shadow"          
+        />
+    </a>
+</div>
