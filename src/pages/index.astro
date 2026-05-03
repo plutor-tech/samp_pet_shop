@@ -1,20 +1,19 @@
 ---
-import Banner from "../components/Banner.astro";
+import "../styles/global.css"
 import Board from "../components/Board.astro";
 import Header from "../components/Header/index.astro";
 import Hero from "../components/Hero.astro";
-import Notification from "../components/Notification.astro";
 import Showcase from "../components/Showcase.astro";
+import Footer from "../components/Footer/index.astro"
 import BaseLayout from "../layouts/BaseLayout.astro"
 
 const pageContent = { title: "PetShop Home" };
 ---
 
 <BaseLayout content={pageContent}>
-	<Banner />
 	<Header />
 	<Hero />
 	<Showcase />
 	<Board />
-	<Notification/>
+	<Footer />
 </BaseLayout>

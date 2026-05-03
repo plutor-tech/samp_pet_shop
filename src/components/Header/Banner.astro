@@ -1,0 +1,27 @@
+---
+import FloatingHeader from "./FloatingHeader/index.astro"
+
+const bannerName = 'The Pet Shop'
+const bannerContact = 'Contact: +91 12345 12345'
+---
+<style>
+  @reference "../../styles/global.css";
+
+  .banner {
+    background-color: rgba(0, 75, 54, 0.866);
+    @apply h-20 w-full top-0 flex justify-between
+  }
+  .banner .name {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+    @apply w-1/4 flex flex-col justify-center items-start pl-6 pr-6 text-fluid-title whitespace-nowrap /* font-bold */ text-amber-100
+  }
+  .banner .contact {
+    @apply w-1/4 flex flex-col justify-center items-end pl-6 pr-6 text-fluid-h3 font-light font-stretch-semi-expanded text-white
+  }
+</style>
+<section class="banner">
+    <span class="name">{bannerName}</span>
+    <FloatingHeader mode="dummy" />
+    <span class="contact">{bannerContact}</span>
+</section>

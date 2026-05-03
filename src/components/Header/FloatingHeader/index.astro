@@ -1,0 +1,82 @@
+---
+import Navigation from "./Navigation.astro";
+import Searchbar from "./Searchbar.astro";
+import Logo from "./Logo.astro";
+
+const { mode } = Astro.props;
+---
+
+<style>
+  @reference "../../../styles/global.css";
+  .fheader-dummy {
+    @apply h-20 w-1/2;
+  }
+  .floating-header {
+    background-color: rgba(255, 255, 255, 0.85);
+    @apply rounded-4xl w-1/2 left-1/4 top-0 fixed flex flex-col justify-center items-center z-50;
+  }
+  .floating-header .main {
+    @apply h-20 w-full flex justify-evenly items-center;
+  }
+</style>
+{
+  mode === "dummy" ? (
+    <div class="fheader-dummy" />
+  ) : (
+    <section class="floating-header">
+      <div class="main" id="main-panel">
+        <Logo />
+        <Searchbar />
+        <div id="main-panel-nav" class="flex justify-center items-center">
+          <button
+            id="nav-menu-btn"
+            class="block lg:hidden focus:outline-none rounded-full shadow p-2 hover:bg-white" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
+            <svg
+              class="w-6 h-6 text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="3"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <div class="hidden lg:flex">
+            <Navigation />
+          </div>
+        </div>
+      </div>
+      <div class="h-15 hidden lg:hidden" id="drop-panel">
+        <div class="h-15 flex justify-center items-center gap-5">
+          <Navigation />
+        </div>
+      </div>
+    </section>
+    <script>
+      const setupNavButton = () => {
+        console.log("Hello!!!");
+        const btn = document.getElementById('nav-menu-btn');
+        const menu = document.getElementById('drop-panel');
+
+        btn?.addEventListener('click', () => {
+          menu?.classList.toggle('hidden');
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', (!isExpanded).toString());
+          console.log("Hmm!!!");
+        });
+      };
+
+      // Run on initial load
+      setupNavButton();
+      
+      // Re-run if using Astro View Transitions
+      //document.addEventListener('astro:page-load', setupNav);
+    </script>
+  )
+}

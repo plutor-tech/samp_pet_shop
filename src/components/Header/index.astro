@@ -1,28 +1,9 @@
 ---
-import Navigation from "./Navigation.astro"
-import Searchbar from "./Searchbar.astro"
-import Logo from "./Logo.astro"
-
-const {mode} = Astro.props;
+import FloatingHeader from "./FloatingHeader/index.astro";
+import Banner from "./Banner.astro";
 ---
-<style>
-  @reference "../../styles/global.css";
-  .header {
-    background-color: rgba(255, 255, 255, 0.85);
-    @apply rounded-4xl h-20 w-1/2 left-1/4 top-0 fixed flex justify-center items-center gap-5 z-50
-  }
-  .header_dummy {
-    @apply h-20 w-1/2
-  }
-</style>
-{
-  mode === 'dummy' ? (
-    <div class="header_dummy"></div>
-  ) : (
-    <section class="header">
-      <Logo /> 
-      <Searchbar />
-      <Navigation />
-    </section>
-  )
-}
+
+<header>
+  <Banner />
+  <FloatingHeader />
+</header>

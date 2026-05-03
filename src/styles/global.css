@@ -2,15 +2,22 @@
 
 
 @theme {
-  /* This creates the .text-fluid-h1 utility */
-  --font-size-fit: clamp(2rem,15cqmin,3.75rem);
-  --font-size-fluid-title: clamp(2rem,5vw,3.75rem); 
-  --font-size-fluid-h1: clamp(2rem, 8vw, 5rem);
+  /* Fluid font sizes */
+  --text-fluid-title: clamp(1.50rem, 3.0cqi, 3.0rem);
+  --text-fluid-title--font-weight: 600; 
+  --text-fluid-h1: clamp(1.80rem, 2.4vw, 2.4rem);
+  --text-fluid-h2: clamp(1.35rem, 1.8vw, 1.8rem);
+  --text-fluid-h3: clamp(0.90rem, 1.2vw, 1.2rem);
+  --text-fluid-h4: clamp(0.67rem, 0.9vw, 0.9rem);
+  --text-fluid-h5: clamp(0.45rem, 0.6vw, 0.6rem);
+
   
-  /* You can also define your stepped sizes here if you prefer */
+  
+  /* Stepped font sizes */
   --font-size-body: 1rem;
 }
 
 html {
     background-color: blanchedalmond;
+    @apply antialiased md:subpixel-antialiased
 }
